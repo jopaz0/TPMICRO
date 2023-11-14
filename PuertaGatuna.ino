@@ -1,4 +1,4 @@
-
+//https://www.tinkercad.com/things/3fWcA0IAWxG-copy-of-puerta-gatuna-20/editel
 //ESTADOS: 6 estados posibles y variables de uso
 //en cualquier caso, se abre al presionar el boton de abrir puerta o al detectar movimiento dentro del tunel
 //0=cerrado normal, -1=solo se abre desde fuera, -2=no se abre excepto x movimiento adentro del tunel
@@ -169,26 +169,6 @@ void CICLAR_TIPO_CIERRE(){
   ACTUALIZAR_CHIP();
   if (estado_actual <= NORMAL) CAMBIAR_ESTADO(tipo_cierre);
   
-  
-  //(esto toma los bits definidos al principio, asi de cambiarlos no es necesario modificar nada, es mas facil de mantener)
-  /*
-  int nuevo = (tipo_cierre == NORMAL)? SOLOINGRESO : (tipo_cierre == SOLOINGRESO)? BLOQUEADO : NORMAL;
-  switch (nuevo){
-    case NORMAL:
-      ACTUALIZAR_CHIP(OUT_LED_CIERRE_BLOQUEADO, 0);
-      ACTUALIZAR_CHIP(OUT_LED_CIERRE_NORMAL, 1);
-      break;
-    case SOLOINGRESO:
-      ACTUALIZAR_CHIP(OUT_LED_CIERRE_NORMAL, 0);
-      ACTUALIZAR_CHIP(OUT_LED_CIERRE_SOLOENTRADA, 1);
-      break;
-    case BLOQUEADO:
-      ACTUALIZAR_CHIP(OUT_LED_CIERRE_SOLOENTRADA, 0);
-      ACTUALIZAR_CHIP(OUT_LED_CIERRE_BLOQUEADO, 1);
-      break;
-    default: break; //no deberia suceder
-  }
-  */
 }
 void CICLAR_TIEMPO_APERTURA(){
   //(esto asume que las luces son los 3 primeros, es mas dificil de mantener)
